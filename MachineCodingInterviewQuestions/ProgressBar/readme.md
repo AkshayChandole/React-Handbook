@@ -3,8 +3,7 @@
 ## Problem Statement:
 
 
-![image](https://github.com/user-attachments/assets/395ad7e7-2486-4378-9528-b6d648a64a25)
-
+![image](https://github.com/user-attachments/assets/2b35fc3a-3a95-4561-9006-d9794fdb0989)
 
 
 Build a progress bar which displays the progress along with the progress percentage in the middle of the bar. Its should be customizable and scalable. You also have to show the progress animation.
