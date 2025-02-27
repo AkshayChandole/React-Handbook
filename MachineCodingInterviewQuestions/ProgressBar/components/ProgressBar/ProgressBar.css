@@ -1,0 +1,16 @@
+.outer {
+  border: 1px black solid;
+  border-radius: 10px;
+  margin: 10px;
+  overflow: hidden;
+  width: inherit;
+  height: 20px;
+}
+
+.inner {
+  color: white;
+  background-color: green;
+  transition: "width 0.5s ease-in-out";
+  text-align: center;
+  height: 100%;
+}
