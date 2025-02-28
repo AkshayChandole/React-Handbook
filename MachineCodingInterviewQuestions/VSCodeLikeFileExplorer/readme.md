@@ -1,6 +1,8 @@
 # [VSCode-like File Explorer](#vscode-like-file-explorer)
 
-![image](https://github.com/user-attachments/assets/fb0ace53-f74e-4f34-857d-acb31c18e594)
+![image](https://github.com/user-attachments/assets/71e8eb6b-6d38-4a2a-9b2b-1df9d0f5a53b)
+
+
 
 
 ## Problem Statement
@@ -21,3 +23,10 @@ Use only React and CSS for implementation (excluding external libraries, except 
 - **Drag and Drop:** Support rearranging files and folders using a drag-and-drop mechanism.
 - **File Preview Panel:** Display the contents of a file when it is selected.
 - **Search Functionality:** Allow users to search for files and folders by name.
+
+
+## Solution:
+
+**Codesandbox link** - [https://codesandbox.io/p/sandbox/progress-bar-9ht5qk](https://codesandbox.io/p/sandbox/vscode-like-file-explorer-7kxsvq)
+
+**Preview** - [https://9ht5qk.csb.app/](https://7kxsvq.csb.app/)
