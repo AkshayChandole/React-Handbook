@@ -1,0 +1,47 @@
+.file-explorer-container {
+  padding-left: 20px;
+  text-align: left;
+  max-width: fit-content;
+}
+
+.add-item-container {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.add-item-container button {
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.add-item-container input {
+  padding: 5px;
+  font-size: 12px;
+  width: 120px;
+}
+
+.rename-btn {
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 2px 5px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.rename-btn:hover {
+  color: #007acc;
+}
+
+.file-container input {
+  padding: 3px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.folder-icon {
+  margin-right: 5px;
+  cursor: pointer;
+}

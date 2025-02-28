@@ -1,0 +1,15 @@
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #black;
+}
+
+.file-explorer-component {
+  border: 1px solid black;
+  max-width: 400px;
+  padding: 20px;
+}
