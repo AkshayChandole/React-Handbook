@@ -1,8 +1,7 @@
 # [VSCode-like File Explorer](#vscode-like-file-explorer)
 
-![image](https://github.com/user-attachments/assets/71e8eb6b-6d38-4a2a-9b2b-1df9d0f5a53b)
 
-
+![image](https://github.com/user-attachments/assets/eef607f2-cd60-4344-ade5-89ef6fe09b75)
 
 
 ## Problem Statement
