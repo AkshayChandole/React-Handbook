@@ -35,8 +35,8 @@ Design and develop a traffic light system using **React**, where the lights tran
 
 ## Solution:
 
-**Codesandbox link** - []
+**Codesandbox link** - https://codesandbox.io/p/sandbox/traffic-light-simulation-lr7s92
 
-**Preview** - []
+**Preview** - https://lr7s92.csb.app/
 
 ---
