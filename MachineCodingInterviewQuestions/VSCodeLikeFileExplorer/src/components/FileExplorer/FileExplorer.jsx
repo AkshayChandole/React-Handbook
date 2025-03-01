@@ -1,10 +1,17 @@
 import { useState } from "react";
 import "./FileExplorer.css";
 
-const FileExplorer = ({ node, onAdd, onRename }) => {
+const FileExplorer = ({
+  node,
+  onAdd,
+  onRename,
+  onDelete,
+  searchQuery,
+  searchFileExplorer,
+}) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [newItemName, setNewItemName] = useState("");
-  const [addingType, setAddingType] = useState(null); // 'file' or 'folder'
+  const [addingType, setAddingType] = useState(null);
   const [isRenaming, setIsRenaming] = useState(false);
   const [renameValue, setRenameValue] = useState(node.name);
 
@@ -16,11 +23,6 @@ const FileExplorer = ({ node, onAdd, onRename }) => {
     }
   };
 
-  const handleCancelAdd = () => {
-    setNewItemName("");
-    setAddingType(null);
-  };
-
   const handleRename = () => {
     if (renameValue.trim()) {
       onRename(node.id, renameValue);
@@ -28,9 +30,11 @@ const FileExplorer = ({ node, onAdd, onRename }) => {
     }
   };
 
+  const isMatch =
+    searchQuery && node.name.toLowerCase().includes(searchQuery.toLowerCase());
+
   return (
-    <div className="file-explorer-container">
-      {/* Folder Toggle / File Display */}
+    <div className={`file-explorer-container ${isMatch ? "highlight" : ""}`}>
       {isRenaming ? (
         <input
           type="text"
@@ -41,43 +45,42 @@ const FileExplorer = ({ node, onAdd, onRename }) => {
           autoFocus
         />
       ) : (
-        <div
-          className="file-item"
-          onClick={() => node.type === "folder" && setIsExpanded(!isExpanded)}
-        >
-          {node.type === "folder" ? (
-            <span className="folder-icon">{isExpanded ? "▼" : "▶"} 📂 </span>
-          ) : (
-            "📄"
+        <div className={`file-item ${node.type}`}>
+          {node.type === "folder" && (
+            <button
+              className="expand-collapse-btn"
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? "➖" : "➕"}
+            </button>
           )}
+          {node.type === "folder" ? (isExpanded ? "📂" : "📁") : "📄"}{" "}
           {node.name}
-          <button
-            className="rename-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsRenaming(true);
-            }}
-          >
+          <button className="rename-btn" onClick={() => setIsRenaming(true)}>
             ✏️
+          </button>
+          <button className="delete-btn" onClick={() => onDelete(node.id)}>
+            🗑️
           </button>
         </div>
       )}
 
-      {/* Render children if expanded */}
-      {isExpanded && node.children && (
-        <div>
+      {isExpanded && node.children && searchFileExplorer(node, searchQuery) && (
+        <div className="children-container">
           {node.children.map((child) => (
             <FileExplorer
               key={child.id}
               node={child}
               onAdd={onAdd}
               onRename={onRename}
+              onDelete={onDelete}
+              searchQuery={searchQuery}
+              searchFileExplorer={searchFileExplorer}
             />
           ))}
         </div>
       )}
 
-      {/* Add File/Folder Input */}
       {isExpanded && node.type === "folder" && (
         <div className="add-item-container">
           {addingType && (
@@ -98,7 +101,7 @@ const FileExplorer = ({ node, onAdd, onRename }) => {
           {addingType && (
             <>
               <button onClick={handleAdd}>Add</button>
-              <button onClick={handleCancelAdd}>Cancel</button>
+              <button onClick={() => setAddingType(null)}>Cancel</button>
             </>
           )}
         </div>

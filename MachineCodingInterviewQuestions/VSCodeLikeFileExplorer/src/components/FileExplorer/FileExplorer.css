@@ -1,47 +1,107 @@
 .file-explorer-container {
   padding-left: 20px;
-  text-align: left;
   max-width: fit-content;
-}
-
-.add-item-container {
+  text-align: left;
   margin-left: 20px;
-  margin-top: 5px;
 }
 
-.add-item-container button {
-  margin-left: 5px;
+/* File & Folder Styles */
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   padding: 5px;
-  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  justify-content: space-between;
+}
+
+.file-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Highlighted search match */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+/* Expand & Collapse Button */
+.expand-collapse-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+.expand-collapse-btn:hover {
+  background-color: lightblue;
+}
+
+/* Folder icon */
+.folder-icon {
+  margin-right: 5px;
   cursor: pointer;
 }
 
+/* Rename & Delete Buttons */
+.rename-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-left: 5px;
+}
+
+.rename-btn:hover {
+  background-color: lightgreen;
+}
+
+.delete-btn:hover {
+  background-color: lightcoral;
+}
+
+/* Input Styles */
+.file-container input,
 .add-item-container input {
   padding: 5px;
   font-size: 12px;
   width: 120px;
 }
 
-.rename-btn {
-  margin-left: 10px;
-  font-size: 12px;
-  padding: 2px 5px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-
-.rename-btn:hover {
-  color: #007acc;
-}
-
 .file-container input {
-  padding: 3px;
-  font-size: 12px;
   width: 100%;
+  padding: 3px;
 }
 
-.folder-icon {
+/* Children Container */
+.children-container {
+  margin-left: 15px;
+  border-left: 1px dashed #ccc;
+  padding-left: 10px;
+}
+
+/* Add Item Container */
+.add-item-container {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.add-item-container button {
   margin-right: 5px;
+  padding: 3px 8px;
+  font-size: 12px;
   cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #007bff;
+  background: #007bff;
+  color: white;
+}
+
+.add-item-container button:hover {
+  background: #0056b3;
 }

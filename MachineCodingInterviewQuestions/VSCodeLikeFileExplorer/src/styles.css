@@ -2,6 +2,9 @@
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -10,6 +13,15 @@ h1 {
 
 .file-explorer-component {
   border: 1px solid black;
-  max-width: 400px;
   padding: 20px;
+  max-width: fit-content;
+}
+
+.search-bar {
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
