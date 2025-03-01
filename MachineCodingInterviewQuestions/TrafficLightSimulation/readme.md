@@ -1,5 +1,22 @@
 # [Traffic Light Simulation🚦](#traffic-light-simulation)
 
+### Red Light:
+<br>
+
+![image](https://github.com/user-attachments/assets/7c482dc0-3d3b-4f30-a267-a376b3da0746)
+
+
+### Yellow Light:
+<br>
+
+![image](https://github.com/user-attachments/assets/872f31ac-b71b-4fe1-80d6-995db8b6b481)
+
+### Green light:
+<br>
+
+![image](https://github.com/user-attachments/assets/507e2b0b-b9de-4335-92ae-2f4cff580905)
+
+
 ## **Problem Statement:**  
 
 Design and implement a traffic light system using **React**, where the lights cycle through **red, yellow, and green** at specific time intervals. The traffic light should continuously repeat this cycle **infinitely**.  
