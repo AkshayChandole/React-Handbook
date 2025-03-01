@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FileExplorer from "./components/FileExplorer/FileExplorer";
 import fileData from "./data/fileData";
 import "./styles.css";
@@ -12,6 +12,10 @@ export default function App() {
   });
 
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(fileStructure));
+  }, [fileStructure]);
 
   const addItem = (parentId, name, type) => {
     const addRecursive = (node) => {
