@@ -1,0 +1,69 @@
+.traffic-light-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.traffic-light-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.light {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.timer-box {
+  width: 50px;
+  height: 50px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+/* Dynamic Timer Colors */
+.red-timer {
+  color: red;
+}
+
+.yellow-timer {
+  color: yellow;
+}
+
+.green-timer {
+  color: green;
+}
+
+.traffic-light-status-text {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+}
