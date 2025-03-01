@@ -19,9 +19,9 @@ Build a VSCode-inspired File Explorer using React that allows users to manage fi
 Use only React and CSS for implementation (excluding external libraries, except for icons).
 
 ### Bonus Features (Optional)
+- **Search Functionality:** Allow users to search for files and folders by name. (implemented in above code)
 - **Drag and Drop:** Support rearranging files and folders using a drag-and-drop mechanism.
 - **File Preview Panel:** Display the contents of a file when it is selected.
-- **Search Functionality:** Allow users to search for files and folders by name.
 
 
 ## Solution:
