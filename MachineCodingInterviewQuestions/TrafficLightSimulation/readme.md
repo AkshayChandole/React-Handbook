@@ -12,18 +12,18 @@ Design and develop a traffic light system using **React**, where the lights tran
 3. **Real-Time UI Updates** – The displayed light and countdown timer should dynamically reflect the active state.  
 4. **Performance Considerations** – The implementation should be efficient and avoid unnecessary re-renders or memory leaks.
 
-   ### Red Light:
+### [Red Light:](#red-light)
 <br>
 
 ![image](https://github.com/user-attachments/assets/7c482dc0-3d3b-4f30-a267-a376b3da0746)
 
 
-### Yellow Light:
+### [Yellow Light:](#yellow-light)
 <br>
 
 ![image](https://github.com/user-attachments/assets/872f31ac-b71b-4fe1-80d6-995db8b6b481)
 
-### Green light:
+### [Green light:](#green-light)
 <br>
 
 ![image](https://github.com/user-attachments/assets/507e2b0b-b9de-4335-92ae-2f4cff580905)
