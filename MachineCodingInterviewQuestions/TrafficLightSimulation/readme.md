@@ -18,22 +18,20 @@
 
 
 ## **Problem Statement:**  
+Design and develop a traffic light system using **React**, where the lights transition through **red, yellow, and green** in a continuous cycle based on predefined time intervals. The system should function indefinitely, automatically switching between lights at the specified durations.  
 
-Design and implement a traffic light system using **React**, where the lights cycle through **red, yellow, and green** at specific time intervals. The traffic light should continuously repeat this cycle **infinitely**.  
+### **Constraints:**  
+1. **React Functional Components Only** – Use React's built-in **state management (`useState`) and lifecycle management (`useEffect`)** without external state management or animation/UI libraries.  
+2. **Fixed Light Durations:**  
+   - **Red:** 5 seconds  
+   - **Yellow:** 2 seconds  
+   - **Green:** 4 seconds  
+3. **Real-Time UI Updates** – The displayed light and countdown timer should dynamically reflect the active state.  
+4. **Performance Considerations** – The implementation should be efficient and avoid unnecessary re-renders or memory leaks.  
 
-**Constraints:**  
-- You **cannot** use any external libraries (e.g., state management, animation, or UI libraries).  
-- The implementation should be based on **React functional components** and **React's built-in state management (useState, useEffect)**.  
-- The color transitions should follow this timing:  
-  - **Red:** 5 seconds  
-  - **Yellow:** 2 seconds  
-  - **Green:** 4 seconds  
-- The UI should update dynamically to reflect the active light.  
-
-**Follow-up Questions:**  
-1. How would you optimize this solution if the time intervals needed to be dynamically adjustable?  
-2. Can you implement this using the **useReducer** hook instead of useState?
-
+### **Follow-up Questions:**  
+1. **How can the solution be optimized to allow dynamic time adjustments for each light?**  
+2. **Can you implement this system using `useReducer` instead of `useState`?**
 --- 
 
 ## Solution:
