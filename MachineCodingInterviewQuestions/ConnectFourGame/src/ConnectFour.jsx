@@ -4,45 +4,6 @@ import "./ConnectFour.css";
 const ROWS = 6;
 const COLS = 7;
 
-// Union-Find Helper Class
-class UnionFind {
-  constructor(size) {
-    this.parent = Array(size).fill(null).map((_, i) => i);
-    this.rank = Array(size).fill(1);
-    this.size = Array(size).fill(1); // Tracks the size of each component
-  }
-
-  find(x) {
-    if (this.parent[x] !== x) {
-      this.parent[x] = this.find(this.parent[x]);
-    }
-    return this.parent[x];
-  }
-
-  union(x, y) {
-    const rootX = this.find(x);
-    const rootY = this.find(y);
-
-    if (rootX !== rootY) {
-      if (this.rank[rootX] > this.rank[rootY]) {
-        this.parent[rootY] = rootX;
-        this.size[rootX] += this.size[rootY];
-      } else if (this.rank[rootX] < this.rank[rootY]) {
-        this.parent[rootX] = rootY;
-        this.size[rootY] += this.size[rootX];
-      } else {
-        this.parent[rootY] = rootX;
-        this.rank[rootX]++;
-        this.size[rootX] += this.size[rootY];
-      }
-    }
-  }
-
-  getSize(x) {
-    return this.size[this.find(x)];
-  }
-}
-
 const ConnectFour = () => {
   const [board, setBoard] = useState(
     Array(ROWS)
@@ -53,75 +14,90 @@ const ConnectFour = () => {
   const [winningCells, setWinningCells] = useState([]);
   const [winner, setWinner] = useState(null);
 
-  const uf = new UnionFind(ROWS * COLS);
+  // Union-Find Data Structure
+  const parent = Array(ROWS * COLS).fill(-1);
 
-  const getIndex = (row, col) => row * COLS + col;
+  const find = (x) => {
+    if (parent[x] < 0) return x;
+    return (parent[x] = find(parent[x])); // Path compression
+  };
 
-  const directions = [
-    [0, 1],    // Horizontal →
-    [1, 0],    // Vertical ↓
-    [1, 1],    // Diagonal ↘
-    [1, -1]    // Diagonal ↙
-  ];
+  const union = (x, y) => {
+    const rootX = find(x);
+    const rootY = find(y);
+    if (rootX !== rootY) {
+      parent[rootX] += parent[rootY];
+      parent[rootY] = rootX;
+    }
+  };
 
-  const checkWin = (row, col) => {
-    const currentIndex = getIndex(row, col);
+  const index = (row, col) => row * COLS + col;
 
-    for (const [dr, dc] of directions) {
-      let count = 1;
-      let winningCells = [[row, col]];
+  const checkWin = (row, col, player) => {
+    const directions = [
+      [0, 1], // Horizontal →
+      [1, 0], // Vertical ↓
+      [1, 1], // Diagonal ↘
+      [1, -1], // Diagonal ↙
+    ];
 
-      for (const sign of [-1, 1]) {
-        let r = row + dr * sign;
-        let c = col + dc * sign;
-
-        while (
-          r >= 0 && r < ROWS &&
-          c >= 0 && c < COLS &&
-          board[r][c] === currentPlayer
+    for (const [dx, dy] of directions) {
+      const cells = [[row, col]];
+      for (let step = 1; step < 4; step++) {
+        const r = row + step * dx;
+        const c = col + step * dy;
+        if (
+          r >= 0 &&
+          r < ROWS &&
+          c >= 0 &&
+          c < COLS &&
+          board[r][c] === player
         ) {
-          count++;
-          winningCells.push([r, c]);
-          r += dr * sign;
-          c += dc * sign;
-        }
+          cells.push([r, c]);
+        } else break;
       }
 
-      if (count >= 4) {
-        setWinningCells(winningCells);
+      for (let step = 1; step < 4; step++) {
+        const r = row - step * dx;
+        const c = col - step * dy;
+        if (
+          r >= 0 &&
+          r < ROWS &&
+          c >= 0 &&
+          c < COLS &&
+          board[r][c] === player
+        ) {
+          cells.push([r, c]);
+        } else break;
+      }
+
+      if (cells.length >= 4) {
+        setWinningCells(cells);
+        setWinner(player);
         return true;
       }
     }
+
     return false;
   };
 
-  const handleClick = (rowIndex, colIndex) => {
-    if (winner || board[rowIndex][colIndex]) return;
+  const handleClick = (e) => {
+    if (winner || winningCells.length > 0) return;
+
+    const cell = e.target.closest(".cell");
+    if (!cell) return; // Ignore clicks outside cells
+
+    const rowIndex = parseInt(cell.dataset.row);
+    const colIndex = parseInt(cell.dataset.col);
 
     const newBoard = [...board.map((row) => [...row])];
 
-    newBoard[rowIndex][colIndex] = currentPlayer;
-    setBoard(newBoard);
+    if (!newBoard[rowIndex][colIndex]) {
+      newBoard[rowIndex][colIndex] = currentPlayer;
+      setBoard(newBoard);
 
-    // Union-Find logic
-    const currentIndex = getIndex(rowIndex, colIndex);
+      if (checkWin(rowIndex, colIndex, currentPlayer)) return;
 
-    for (const [dr, dc] of directions) {
-      const newRow = rowIndex + dr;
-      const newCol = colIndex + dc;
-
-      if (
-        newRow >= 0 && newRow < ROWS &&
-        newCol >= 0 && newCol < COLS &&
-        newBoard[newRow][newCol] === currentPlayer
-      ) {
-        uf.union(currentIndex, getIndex(newRow, newCol));
-      }
-    }
-
-    if (checkWin(rowIndex, colIndex)) {
-      setWinner(currentPlayer);
-    } else {
       setCurrentPlayer(currentPlayer === "red" ? "blue" : "red");
     }
   };
@@ -129,7 +105,8 @@ const ConnectFour = () => {
   return (
     <div className="connect-four-container">
       <h1 className="game-title">Welcome to Connect Four</h1>
-      <div className="board">
+
+      <div className="board" onClick={handleClick}>
         {board.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
             <div
@@ -139,17 +116,20 @@ const ConnectFour = () => {
                   ? "winning"
                   : ""
               }`}
-              onClick={() => handleClick(rowIndex, colIndex)}
+              data-row={rowIndex}
+              data-col={colIndex}
             >
               {cell && <div className={`disc ${cell}`} />}
             </div>
           ))
         )}
       </div>
+
       <div className="winner-message">
         {winner && (
           <h2>
-            The winner is <span className={winner}>{winner.toUpperCase()}</span> 🎉
+            The winner is <span className={winner}>{winner.toUpperCase()}</span>{" "}
+            🎉
           </h2>
         )}
       </div>
