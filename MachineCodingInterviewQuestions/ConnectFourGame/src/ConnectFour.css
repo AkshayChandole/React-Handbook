@@ -1,0 +1,67 @@
+.connect-four-container {
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  background-color: black;
+  padding: 10px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgb(134, 50, 50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell.winning {
+  border: 3px solid yellow;
+  z-index: 1;
+}
+
+.disc {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.winner-message {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
+}
+
+.winner-message .red {
+  background-color: red;
+}
+
+.winner-message .blue {
+  background-color: blue;
+}
