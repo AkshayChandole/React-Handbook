@@ -15,4 +15,30 @@ This challenge tests your understanding of **event delegation, state management,
 
 💡 **Hint for Finding Connected Four Without DFS:** Consider using the **Disjoint Set (Union-Find) data structure** to efficiently track connected components.  
 
-Let me know your thoughts on tackling this! 🚀
+##### Starting screen:
+![image](https://github.com/user-attachments/assets/f2ac5356-43ec-48eb-acd7-cce4781c5ec9)
+
+#### Winning Scenario1 (Horizontal →):
+![image](https://github.com/user-attachments/assets/35ad5218-8469-4d75-b519-6a54bd0a5f62)
+
+#### Winning Scenario2 (Vertical ↓):
+![image](https://github.com/user-attachments/assets/d15d3cc5-3009-4b9d-bb69-621701023671)
+
+#### Winning Scenario3 (Diagonal ↘):
+![image](https://github.com/user-attachments/assets/3d1366ab-8aa1-4cf6-9d41-e63578c1d396)
+
+#### Winning Scenario4 (Diagonal ↙):
+![image](https://github.com/user-attachments/assets/500231a0-66f4-4cff-9bb3-31033ec533dd)
+
+## **Solution:**
+
+
+**Codesandbox link** - [https://codesandbox.io/p/sandbox/traffic-light-simulation-lr7s92](https://codesandbox.io/p/sandbox/connect-four-game-rwxf8v)
+
+**Preview** - https://rwxf8v.csb.app/
+
+
+---
+
+
+
