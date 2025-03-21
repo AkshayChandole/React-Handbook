@@ -23,3 +23,20 @@ Design and implement a WhatsApp-like chat UI in React where:
 ✅ CSS styling for an elegant chat interface <br>
 
 Would you be able to build this in 60 minutes? ⏳
+
+## Sample Screenshots:
+
+
+![image](https://github.com/user-attachments/assets/19496050-e6dc-4eaa-b09a-014c19365cce)
+
+
+![image](https://github.com/user-attachments/assets/f2787184-f153-47d3-b728-2c0a11059847)
+
+
+![image](https://github.com/user-attachments/assets/2983f6d3-6232-46c4-b2c7-c17e8e5b5bd1)
+
+
+![image](https://github.com/user-attachments/assets/675c8d24-192e-4527-8225-1569fb8ba126)
+
+
+
