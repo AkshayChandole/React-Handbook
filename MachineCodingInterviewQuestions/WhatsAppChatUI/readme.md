@@ -24,6 +24,12 @@ Design and implement a WhatsApp-like chat UI in React where:
 
 Would you be able to build this in 60 minutes? ⏳
 
+## Solution:
+
+**Codesandbox link** - https://codesandbox.io/p/sandbox/ktpn72
+
+**Preview** - https://ktpn72.csb.app/
+
 ## Sample Screenshots:
 
 
