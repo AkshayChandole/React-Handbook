@@ -1,0 +1,63 @@
+.message-container {
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+  color: black
+}
+
+.user {
+  justify-content: flex-end;
+}
+
+.bot {
+  justify-content: flex-start;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.user .message {
+  background-color: #dcf8c6;
+  text-align: right;
+}
+
+.bot .message {
+  background-color: #ffffff;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.message-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.timestamp {
+  color: gray;
+  font-size: 10px;
+}
+
+.status-icon {
+  margin-left: 5px;
+  width: fit-content;
+  height: 15px;
+}
+
+.sent {
+  color: gray;
+}
+
+.delivered {
+  color: gray;
+}
+
+.read {
+  color: green;
+}

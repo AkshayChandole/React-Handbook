@@ -1,0 +1,58 @@
+.chat-list {
+  width: 100%;
+  height: 600px;
+  max-width: 400px;
+  margin: auto;
+  background: var(--bg-color, #fff);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: background 0.3s ease-in-out;
+}
+
+.chat-list h2 {
+  margin-left: 5px;
+  color: #128c7e;
+}
+
+.chat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color, #ddd);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.chat-item:hover {
+  background: var(--hover-bg, #f2f2f2);
+}
+
+.chat-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color, #000);
+}
+
+.chat-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--text-muted, gray);
+}
+
+.chat-time {
+  font-size: 12px;
+  width: fit-content;
+  color: var(--text-muted, gray);
+  align-self: center;
+}
+
+/* 🔥 Dark Mode Support */
+body.dark .chat-list {
+  --bg-color: #1e1e1e;
+  --border-color: #444;
+  --hover-bg: #2c2c2c;
+  --text-color: #fff;
+  --text-muted: #bbb;
+}
