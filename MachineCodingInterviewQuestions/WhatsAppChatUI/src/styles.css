@@ -56,7 +56,17 @@ body.dark .theme-toggle:hover {
 }
 
 body.dark .chat-list,
-body.dark .chat-window {
+body.dark .chat-window,
+body.dark .chat-input {
   background: #1e1e1e;
   border-color: #444;
+}
+
+body.dark .chat-input input {
+  background: #444;
+  color: #fff;
+}
+
+body.dark .chat-input ::placeholder {
+  color: gray;
 }

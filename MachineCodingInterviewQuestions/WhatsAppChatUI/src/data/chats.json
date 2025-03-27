@@ -6,31 +6,31 @@
       {
         "text": "Hi Abhijeet",
         "sender": "user",
-        "timestamp": "12:25:10 AM",
+        "timestamp": "09:25:10 PM",
         "status": "read"
       },
       {
         "text": "Hey Akshay!",
         "sender": "Abhijeet",
-        "timestamp": "12:26:15 AM",
+        "timestamp": "09:26:15 PM",
         "status": "read"
       },
       {
         "text": "Did you finish the report?",
         "sender": "user",
-        "timestamp": "12:28:40 AM",
+        "timestamp": "09:28:40 PM",
         "status": "read"
       },
       {
         "text": "Almost! Just adding the final touches.",
         "sender": "Abhijeet",
-        "timestamp": "12:30:25 AM",
+        "timestamp": "09:30:25 PM",
         "status": "read"
       },
       {
         "text": "Great! Let me know if you need any help.",
         "sender": "user",
-        "timestamp": "12:35:25 AM",
+        "timestamp": "09:35:25 PM",
         "status": "read"
       }
     ]
@@ -42,19 +42,19 @@
       {
         "text": "Hey Akshay, it's been a while! How have you been?",
         "sender": "Amit",
-        "timestamp": "12:05:56 AM",
+        "timestamp": "09:05:56 PM",
         "status": "read"
       },
       {
         "text": "Hey Amit! I'm doing great. How about you?",
         "sender": "user",
-        "timestamp": "12:06:56 AM",
+        "timestamp": "09:06:56 PM",
         "status": "read"
       },
       {
         "text": "I'm good too! We should plan a meet-up soon.",
         "sender": "Amit",
-        "timestamp": "12:05:56 AM",
+        "timestamp": "09:05:56 PM",
         "status": "read"
       }
     ]
@@ -66,25 +66,25 @@
       {
         "text": "Hi Akshay",
         "sender": "Bhushan",
-        "timestamp": "12:15:12 AM",
+        "timestamp": "09:15:12 PM",
         "status": "read"
       },
       {
         "text": "Hey Bhushan! I am doing  good, just busy working on some ReactJS development.",
         "sender": "user",
-        "timestamp": "12:15:12 AM",
+        "timestamp": "09:15:12 PM",
         "status": "read"
       },
       {
         "text": "Oh nice! React is awesome.",
         "sender": "Bhushan",
-        "timestamp": "12:17:12 AM",
+        "timestamp": "09:17:12 PM",
         "status": "read"
       },
       {
         "text": "Are you working on a project?",
         "sender": "Bhushan",
-        "timestamp": "12:17:12 AM",
+        "timestamp": "09:17:12 PM",
         "status": "read"
       }
     ]
